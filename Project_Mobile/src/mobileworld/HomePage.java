@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -48,6 +49,7 @@ public class HomePage {
 	    driver.findElement(By.id("inputZip")).sendKeys("560021");
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//*[@rel='samsung']")).click();
+	    driver.findElement(By.xpath("//*[@rel='apple']")).click();
 	    
 	    Thread.sleep(2000);
 	    WebElement mobileType = driver.findElement(By.xpath("(//*[@class='multi_select'])[3]"));
@@ -60,6 +62,24 @@ public class HomePage {
 	    WebElement element = driver.findElement(By.id("bought"));
 	    Select prev_Order = new Select(element);
 	    prev_Order.selectByValue("0");
+	    
+	    Thread.sleep(1000);
+	    driver.findElement(By.id("gridCheck1")).click();
+	    System.out.println( driver.findElement(By.id("gridCheck1")).isSelected());
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath("(//*[@for='gridCheck1'])[2]")).click();
+	    
+	    driver.findElement(By.xpath("(//*[@type='button'])[1]")).click();
+	    
+	    String message =  driver.findElement(By.xpath("//div[@class='modal-body']")).getText();
+	    System.out.println(message);
+	    Assert.assertEquals(message,"Your Order has been Placed Successfully!\nHappy Shopping.........");
+	    
+	    driver.findElement(By.linkText("Close")).click();
+	    
+	    
+	    
+	    
 	    
 	    
 	    
