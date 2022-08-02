@@ -30,6 +30,14 @@ public class HomePage {
 		driver.findElement(By.id("inputFirstName")).sendKeys("Vignesh");
 		driver.findElement(By.xpath("(//input[@id='inputFirstName'])[2]")).sendKeys("Viki");
 		driver.findElement(By.id("inputEmail")).sendKeys("viki123@gmail.com");
+		driver.findElement(By.id("inputPassword")).sendKeys("Vikihgfdsz");
+		driver.findElement(By.id("flexRadioDefault1")).click();
+		driver.findElement(By.xpath("(//input[@type='number'])[1]")).sendKeys("9876543210");
+		driver.findElement(By.id(" address1")).sendKeys("No-1,Second floor");
+		driver.findElement(By.id("address2")).sendKeys("Nehru street");
+		driver.findElement(By.id("inputCity")).sendKeys("Bangalore");
+		
+	    
 
 	}
 
