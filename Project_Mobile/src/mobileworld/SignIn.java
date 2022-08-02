@@ -11,8 +11,7 @@ public class SignIn extends Webdriver {
 
      WebDriver driver;
 	
-    @Test
-     
+    @Test 
 	public  void signIn()  {
 		// TODO Auto-generated method stub
 		
@@ -25,6 +24,7 @@ public class SignIn extends Webdriver {
 		driver.findElement(By.id("username")).sendKeys("Viki871");
 		driver.findElement(By.id("password")).sendKeys("Viki9876543");
 		driver.findElement(By.linkText("Log In")).click();
+		driver.close();
 		
 		
 		
