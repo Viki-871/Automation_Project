@@ -13,7 +13,7 @@ public class SignUp {
 
 	
 	@Test
-	public  static void signUp() throws InterruptedException  {
+	public void signUp() throws InterruptedException  {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();

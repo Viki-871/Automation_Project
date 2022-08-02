@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class ContactUs {
 
 	@Test
-	public static void contactus() {
+	public  void contactus() {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
