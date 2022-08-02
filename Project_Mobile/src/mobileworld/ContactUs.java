@@ -33,7 +33,7 @@ public class ContactUs {
 		driver.findElement(By.xpath("//input[@placeholder='Phone']")).sendKeys("9876543210");
 		driver.findElement(By.xpath("//textarea[@placeholder='Message']")).sendKeys("speaker error");
 		driver.findElement(By.xpath("//input[@class='btn']")).click();
-	
+	    driver.quit();
 
 	}
 
