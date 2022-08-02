@@ -7,12 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HomePage {
-
-	public static void main(String[] args) {
+	
+    @Test
+	public void homePage() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
@@ -42,6 +44,17 @@ public class HomePage {
 	    WebElement selectState =  driver.findElement(By.id("inputState"));
 	    Select state = new Select(selectState);
 	    state.selectByVisibleText("Karnataka");
+	    
+	    driver.findElement(By.id("inputZip")).sendKeys("560021");
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//*[@rel='samsung']")).click();
+	    
+	    WebElement mobileType = driver.findElement(By.className("multi_select"));
+	    Select mobile = new Select(mobileType);
+	    mobile.selectByVisibleText("Apple 13 ");
+	    
+	    
+	    
 
 	}
 
