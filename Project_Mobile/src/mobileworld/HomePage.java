@@ -49,7 +49,8 @@ public class HomePage {
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//*[@rel='samsung']")).click();
 	    
-	    WebElement mobileType = driver.findElement(By.className("multi_select"));
+	    Thread.sleep(2000);
+	    WebElement mobileType = driver.findElement(By.xpath("(//*[@class='multi_select'])[3]"));
 	    Select mobile = new Select(mobileType);
 	    mobile.selectByVisibleText("Apple 13 ");
 	    
