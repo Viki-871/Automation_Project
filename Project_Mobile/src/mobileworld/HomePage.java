@@ -54,6 +54,14 @@ public class HomePage {
 	    Select mobile = new Select(mobileType);
 	    mobile.selectByVisibleText("Apple 13 ");
 	    
+	    driver.findElement(By.xpath("//*[@placeholder='no of mobiles']")).sendKeys("1");
+	    
+	    
+	    WebElement element = driver.findElement(By.id("bought"));
+	    Select prev_Order = new Select(element);
+	    prev_Order.selectByValue("0");
+	    
+	    
 	    
 	    
 
