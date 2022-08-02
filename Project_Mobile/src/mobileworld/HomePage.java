@@ -1,5 +1,7 @@
 package mobileworld;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -73,7 +75,7 @@ public class HomePage {
 	    
 	    String message =  driver.findElement(By.xpath("//div[@class='modal-body']")).getText();
 	    System.out.println(message);
-	    Assert.assertEquals(message,"Your Order has been Placed Successfully!\nHappy Shopping.........");
+	    AssertJUnit.assertEquals(message,"Your Order has been Placed Successfully!\nHappy Shopping.........");
 	    
 	    driver.findElement(By.linkText("Close")).click();
 	    
