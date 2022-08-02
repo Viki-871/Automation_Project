@@ -17,6 +17,8 @@ public class HomePage {
 		driver.get("https://mobileworld.azurewebsites.net/");
 		
 		driver.findElement(By.linkText("All Mobiles")).click();
+		driver.findElement(By.id("myInput")).sendKeys("Samsung");
+		driver.findElement(By.linkText("Order")).click();
 
 	}
 
