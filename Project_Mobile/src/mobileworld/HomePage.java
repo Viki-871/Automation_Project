@@ -28,6 +28,8 @@ public class HomePage {
 		}
 		
 		driver.findElement(By.id("inputFirstName")).sendKeys("Vignesh");
+		driver.findElement(By.xpath("(//input[@id='inputFirstName'])[2]")).sendKeys("Viki");
+		driver.findElement(By.id("inputEmail")).sendKeys("viki123@gmail.com");
 
 	}
 
