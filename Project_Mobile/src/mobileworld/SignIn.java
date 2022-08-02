@@ -1,6 +1,9 @@
 package mobileworld;
 
 import org.testng.annotations.Test;
+
+import dataProvider.DP001;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,8 +13,8 @@ public class SignIn {
 
      
 	
-    @Test 
-	public  void signIn() throws InterruptedException  {
+    @Test (dataProvider="DataMobile" ,dataProviderClass=DP001.class)
+	public  void signIn(String username, String password) throws InterruptedException  {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
@@ -20,8 +23,8 @@ public class SignIn {
 		driver.get("https://mobileworld.azurewebsites.net/");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		driver.findElement(By.id("username")).sendKeys("Viki871");
-		driver.findElement(By.id("password")).sendKeys("Viki9876543");
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.linkText("Log In")).click();
 		driver.close();
 		

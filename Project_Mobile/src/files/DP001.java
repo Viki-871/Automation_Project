@@ -1,10 +1,9 @@
-package dataProvider;
+package files;
 
 import org.testng.annotations.DataProvider;
 
 public class DP001 {
-	
-	
+
 	
 	@DataProvider(name="DataMobile")
 	public static String[][] getData() {
@@ -23,6 +22,3 @@ public class DP001 {
 	}
 
 }
-
-
-

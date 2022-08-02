@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-02T15:27:29 IST" name="Suite" finished-at="2022-08-02T15:27:53 IST" duration-ms="23875">
+  <suite started-at="2022-08-02T19:02:05 IST" name="Default suite" finished-at="2022-08-02T19:02:28 IST" duration-ms="23038">
     <groups>
     </groups>
-    <test started-at="2022-08-02T15:27:29 IST" name="Test" finished-at="2022-08-02T15:27:53 IST" duration-ms="23875">
+    <test started-at="2022-08-02T19:02:05 IST" name="Default test" finished-at="2022-08-02T19:02:28 IST" duration-ms="23038">
       <class name="mobileworld.SignIn">
-        <test-method signature="signIn()[pri:0, instance:mobileworld.SignIn@4686afc2]" started-at="2022-08-02T15:27:29 IST" name="signIn" finished-at="2022-08-02T15:27:45 IST" duration-ms="15753" status="PASS">
+        <test-method signature="signIn(java.lang.String,java.lang.String)[pri:0, instance:mobileworld.SignIn@4f80542f]" started-at="2022-08-02T19:02:05 IST" name="signIn" data-provider="DataMobile" finished-at="2022-08-02T19:02:20 IST" duration-ms="14681" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Vignesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234567]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signIn -->
+        <test-method signature="signIn(java.lang.String,java.lang.String)[pri:0, instance:mobileworld.SignIn@4f80542f]" started-at="2022-08-02T19:02:20 IST" name="signIn" data-provider="DataMobile" finished-at="2022-08-02T19:02:28 IST" duration-ms="8254" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Vignesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234567]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signIn -->
       </class> <!-- mobileworld.SignIn -->
-      <class name="mobileworld.SignUp">
-        <test-method signature="signUp()[pri:0, instance:mobileworld.SignUp@229c6181]" started-at="2022-08-02T15:27:29 IST" name="signUp" finished-at="2022-08-02T15:27:49 IST" duration-ms="20377" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signUp -->
-      </class> <!-- mobileworld.SignUp -->
-      <class name="mobileworld.HomePage">
-        <test-method signature="homePage()[pri:0, instance:mobileworld.HomePage@121314f7]" started-at="2022-08-02T15:27:29 IST" name="homePage" finished-at="2022-08-02T15:27:53 IST" duration-ms="23789" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- homePage -->
-      </class> <!-- mobileworld.HomePage -->
-      <class name="mobileworld.ContactUs">
-        <test-method signature="contactus()[pri:0, instance:mobileworld.ContactUs@1e0b4072]" started-at="2022-08-02T15:27:29 IST" name="contactus" finished-at="2022-08-02T15:27:45 IST" duration-ms="15612" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- contactus -->
-      </class> <!-- mobileworld.ContactUs -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
