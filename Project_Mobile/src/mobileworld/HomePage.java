@@ -1,5 +1,7 @@
 package mobileworld;
 
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,6 +21,13 @@ public class HomePage {
 		driver.findElement(By.linkText("All Mobiles")).click();
 		driver.findElement(By.id("myInput")).sendKeys("Samsung");
 		driver.findElement(By.linkText("Order")).click();
+		
+		Set<String> order = driver.getWindowHandles();
+		for(String mobile : order) {
+			driver.switchTo().window(mobile);
+		}
+		
+		driver.findElement(By.id("inputFirstName")).sendKeys("Vignesh");
 
 	}
 
