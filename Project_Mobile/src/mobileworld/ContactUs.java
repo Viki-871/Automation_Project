@@ -1,6 +1,9 @@
 package mobileworld;
 
 import org.testng.annotations.Test;
+
+import dataProvider.DP003;
+
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -10,8 +13,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ContactUs {
 
-	@Test
-	public  void contactus() {
+	@Test(dataProvider="ContactData", dataProviderClass=DP003.class)
+	public  void contactus(String userName, String mail, String phoneNumber, String message) {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
@@ -27,10 +30,10 @@ public class ContactUs {
 			driver.switchTo().window(support);
 		}
 		
-		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Viki");
-		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("viki123@gmail.com");
-		driver.findElement(By.xpath("//input[@placeholder='Phone']")).sendKeys("9876543210");
-		driver.findElement(By.xpath("//textarea[@placeholder='Message']")).sendKeys("speaker error");
+		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys(userName);
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys(mail);
+		driver.findElement(By.xpath("//input[@placeholder='Phone']")).sendKeys(phoneNumber);
+		driver.findElement(By.xpath("//textarea[@placeholder='Message']")).sendKeys(message);
 		driver.findElement(By.xpath("//input[@class='btn']")).click();
 	    driver.quit();
 

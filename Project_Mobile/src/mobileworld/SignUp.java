@@ -1,6 +1,9 @@
 package mobileworld;
 
 import org.testng.annotations.Test;
+
+import dataProvider.DP002;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -13,8 +16,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SignUp {
 
 	
-	@Test
-	public void signUp() throws InterruptedException  {
+	@Test(dataProvider="SignUpData", dataProviderClass=DP002.class)
+	public void signUp(String firstName, String lastName, String email,String password, String dob, String phoneNumber, String bio) throws InterruptedException  {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
@@ -26,16 +29,17 @@ public class SignUp {
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("Sign up")).click();
-		driver.findElement(By.id("myName")).sendKeys("Vignesh");
-		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Viki");
-		driver.findElement(By.xpath("//input[@placeholder='Enter Email']")).sendKeys("viki123@gmail.com");
-		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("XXXXXXXX");
-		driver.findElement(By.xpath("//input[@type='date']")).sendKeys("04-03-1998");
-		driver.findElement(By.xpath("//input[@type='number']")).sendKeys("9876543210");
-		driver.findElement(By.xpath("//*[@placeholder='Short Bio']")).sendKeys("Enthusiastic Person");
+		driver.findElement(By.id("myName")).sendKeys(firstName);
+		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys(lastName);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Email']")).sendKeys(email);
+		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(password);
+		driver.findElement(By.xpath("//input[@type='date']")).sendKeys(dob);
+		driver.findElement(By.xpath("//input[@type='number']")).sendKeys(phoneNumber);
+		driver.findElement(By.xpath("//*[@placeholder='Short Bio']")).sendKeys(bio);
 		driver.findElement(By.xpath("//*[@type='Submit']")).click();
 		Thread.sleep(3000);
 		driver.switchTo().alert().accept();
+		driver.quit();
 		
 		
 		

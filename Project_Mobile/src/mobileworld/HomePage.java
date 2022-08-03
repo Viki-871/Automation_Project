@@ -1,6 +1,9 @@
 package mobileworld;
 
 import org.testng.annotations.Test;
+
+import dataProvider.DP004;
+
 import org.testng.AssertJUnit;
 import java.util.Set;
 
@@ -16,8 +19,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HomePage {
 	
-    @Test
-	public void homePage() throws InterruptedException {
+    @Test(dataProvider="OrderData", dataProviderClass=DP004.class)
+	public void homePage(String mobileName, String firstName, String lastName, String email, String password, String phoneNumber, String address1,String address2, String city, String postCode, String count) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		WebDriverManager.chromedriver().setup();
@@ -26,7 +29,7 @@ public class HomePage {
 		driver.get("https://mobileworld.azurewebsites.net/");
 		
 		driver.findElement(By.linkText("All Mobiles")).click();
-		driver.findElement(By.id("myInput")).sendKeys("Samsung");
+		driver.findElement(By.id("myInput")).sendKeys(mobileName);
 		driver.findElement(By.linkText("Order")).click();
 		
 		Set<String> order = driver.getWindowHandles();
@@ -34,21 +37,21 @@ public class HomePage {
 			driver.switchTo().window(mobile);
 		}
 		
-		driver.findElement(By.id("inputFirstName")).sendKeys("Vignesh");
-		driver.findElement(By.xpath("(//input[@id='inputFirstName'])[2]")).sendKeys("Viki");
-		driver.findElement(By.id("inputEmail")).sendKeys("viki123@gmail.com");
-		driver.findElement(By.id("inputPassword")).sendKeys("Vikihgfdsz");
+		driver.findElement(By.id("inputFirstName")).sendKeys(firstName);
+		driver.findElement(By.xpath("(//input[@id='inputFirstName'])[2]")).sendKeys(lastName);
+		driver.findElement(By.id("inputEmail")).sendKeys(email);
+		driver.findElement(By.id("inputPassword")).sendKeys(password);
 		driver.findElement(By.id("flexRadioDefault1")).click();
-		driver.findElement(By.xpath("(//input[@type='number'])[1]")).sendKeys("9876543210");
-		driver.findElement(By.id(" address1")).sendKeys("No-1,Second floor");
-		driver.findElement(By.id("address2")).sendKeys("Nehru street");
-		driver.findElement(By.id("inputCity")).sendKeys("Bangalore");
+		driver.findElement(By.xpath("(//input[@type='number'])[1]")).sendKeys(phoneNumber);
+		driver.findElement(By.id(" address1")).sendKeys(address1);
+		driver.findElement(By.id("address2")).sendKeys(address2);
+		driver.findElement(By.id("inputCity")).sendKeys(city);
 		
 	    WebElement selectState =  driver.findElement(By.id("inputState"));
 	    Select state = new Select(selectState);
 	    state.selectByVisibleText("Karnataka");
 	    
-	    driver.findElement(By.id("inputZip")).sendKeys("560021");
+	    driver.findElement(By.id("inputZip")).sendKeys(postCode);
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//*[@rel='samsung']")).click();
 	    driver.findElement(By.xpath("//*[@rel='apple']")).click();
@@ -58,7 +61,7 @@ public class HomePage {
 	    Select mobile = new Select(mobileType);
 	    mobile.selectByVisibleText("Apple 13 ");
 	    
-	    driver.findElement(By.xpath("//*[@placeholder='no of mobiles']")).sendKeys("1");
+	    driver.findElement(By.xpath("//*[@placeholder='no of mobiles']")).sendKeys(count);
 	    
 	    
 	    WebElement element = driver.findElement(By.id("bought"));
@@ -78,7 +81,7 @@ public class HomePage {
 	    AssertJUnit.assertEquals(message,"Your Order has been Placed Successfully!\nHappy Shopping.........");
 	    
 	    driver.findElement(By.linkText("Close")).click();
-	    
+	    driver.quit();
 	    
 	    
 	    

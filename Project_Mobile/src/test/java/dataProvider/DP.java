@@ -17,7 +17,7 @@ public class DP {
 	//@DataProvider(name="mobileData")
 	public void getData()  {
 		
-		String[][] testData = new String[2][4];
+		String[][] testData = null;
 		
 		try {
 			
