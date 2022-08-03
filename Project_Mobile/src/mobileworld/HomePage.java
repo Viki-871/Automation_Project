@@ -17,16 +17,16 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class HomePage {
+public class HomePage extends Webdriver {
 	
     @Test(dataProvider="OrderData", dataProviderClass=DP004.class)
 	public void homePage(String mobileName, String firstName, String lastName, String email, String password, String phoneNumber, String address1,String address2, String city, String postCode, String count) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		WebDriverManager.chromedriver().setup();
+		/*WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://mobileworld.azurewebsites.net/");
+		driver.get("https://mobileworld.azurewebsites.net/");*/
 		
 		driver.findElement(By.linkText("All Mobiles")).click();
 		driver.findElement(By.id("myInput")).sendKeys(mobileName);
@@ -56,10 +56,10 @@ public class HomePage {
 	    driver.findElement(By.xpath("//*[@rel='samsung']")).click();
 	    driver.findElement(By.xpath("//*[@rel='apple']")).click();
 	    
-	    Thread.sleep(2000);
-	    WebElement mobileType = driver.findElement(By.xpath("(//*[@class='multi_select'])[3]"));
+	    Thread.sleep(1000);
+	    WebElement mobileType = driver.findElement(By.xpath("(//select[@class='multi_select'])[3]"));
 	    Select mobile = new Select(mobileType);
-	    mobile.selectByVisibleText("Apple 13 ");
+	    mobile.selectByVisibleText("Apple 12");
 	    
 	    driver.findElement(By.xpath("//*[@placeholder='no of mobiles']")).sendKeys(count);
 	    
@@ -78,10 +78,10 @@ public class HomePage {
 	    
 	    String message =  driver.findElement(By.xpath("//div[@class='modal-body']")).getText();
 	    System.out.println(message);
-	    AssertJUnit.assertEquals(message,"Your Order has been Placed Successfully!\nHappy Shopping.........");
+	    Assert.assertEquals(message,"Your Order has been Placed Successfully!\nHappy Shopping.........");
 	    
 	    driver.findElement(By.linkText("Close")).click();
-	    driver.quit();
+	   // driver.quit();
 	    
 	    
 	    

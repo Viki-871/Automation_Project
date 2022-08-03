@@ -3,6 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test" parallel="classes">
     <classes>
+      
       <class name="mobileworld.HomePage"/>
       <class name="mobileworld.SignUp"/>
       <class name="mobileworld.SignIn"/>

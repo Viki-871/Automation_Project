@@ -11,16 +11,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ContactUs {
+public class ContactUs extends Webdriver {
 
 	@Test(dataProvider="ContactData", dataProviderClass=DP003.class)
 	public  void contactus(String userName, String mail, String phoneNumber, String message) {
 		// TODO Auto-generated method stub
 		
-		WebDriverManager.chromedriver().setup();
+		/*WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://mobileworld.azurewebsites.net/");
+		driver.get("https://mobileworld.azurewebsites.net/");*/
 		
 		driver.findElement(By.xpath("//*[contains(text(),'Support')]")).click();
 		driver.findElement(By.linkText("Contact Us")).click();

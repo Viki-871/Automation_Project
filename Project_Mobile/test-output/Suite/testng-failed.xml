@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
+      <class name="mobileworld.SignUp">
+        <methods>
+          <include name="invoke"/>
+          <include name="signUp" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- mobileworld.SignUp -->
       <class name="mobileworld.HomePage">
         <methods>
-          <include name="homePage"/>
+          <include name="invoke"/>
+          <include name="homePage" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- mobileworld.HomePage -->
-      <class name="mobileworld.ContactUs">
-        <methods>
-          <include name="contactus"/>
-        </methods>
-      </class> <!-- mobileworld.ContactUs -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

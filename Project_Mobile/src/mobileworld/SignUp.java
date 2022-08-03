@@ -13,17 +13,17 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SignUp {
+public class SignUp extends Webdriver {
 
 	
 	@Test(dataProvider="SignUpData", dataProviderClass=DP002.class)
 	public void signUp(String firstName, String lastName, String email,String password, String dob, String phoneNumber, String bio) throws InterruptedException  {
 		// TODO Auto-generated method stub
 		
-		WebDriverManager.chromedriver().setup();
+		/*WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://mobileworld.azurewebsites.net/");
+		driver.get("https://mobileworld.azurewebsites.net/");*/
 		
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
