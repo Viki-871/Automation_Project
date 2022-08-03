@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 public class DP002 {
 
 	
-	@DataProvider(name="SignUpData")
+	@DataProvider(name="signUpData")
 	public static String[][] getData() {
 		
 		

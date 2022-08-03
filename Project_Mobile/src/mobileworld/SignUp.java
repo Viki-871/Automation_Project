@@ -10,13 +10,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
+ 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SignUp extends Webdriver {
+public class SignUp extends Webdriver  {
 
 	
-	@Test(dataProvider="SignUpData", dataProviderClass=DP002.class)
+	@Test(dataProvider="signUpData", dataProviderClass=DP002.class)
 	public void signUp(String firstName, String lastName, String email,String password, String dob, String phoneNumber, String bio) throws InterruptedException  {
 		// TODO Auto-generated method stub
 		
@@ -25,7 +25,7 @@ public class SignUp extends Webdriver {
 		driver.manage().window().maximize();
 		driver.get("https://mobileworld.azurewebsites.net/");*/
 		
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("Sign up")).click();
@@ -39,7 +39,7 @@ public class SignUp extends Webdriver {
 		driver.findElement(By.xpath("//*[@type='Submit']")).click();
 		Thread.sleep(3000);
 		driver.switchTo().alert().accept();
-		driver.quit();
+		//driver.quit();
 		
 		
 		

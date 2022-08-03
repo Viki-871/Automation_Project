@@ -5,7 +5,9 @@
     <classes>
       <class name="mobileworld.SignUp">
         <methods>
-          <include name="signUp" invocation-numbers="2"/>
+          <include name="invoke"/>
+          <include name="signUp"/>
+          <include name="close"/>
         </methods>
       </class> <!-- mobileworld.SignUp -->
     </classes>

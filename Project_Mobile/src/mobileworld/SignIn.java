@@ -26,7 +26,7 @@ public class SignIn extends Webdriver{
 		driver.findElement(By.id("username")).sendKeys(username);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.linkText("Log In")).click();
-		driver.close();
+		//driver.close();
 		
 		
 		
